@@ -1,4 +1,4 @@
-const NETWORK_ID = 1; const RPC_URL = 'https://robinhood-mainnet.g.alchemy.com/v2/h7y2nsAnaBKL98b6RHAsM'; const ADDRESS ="0x357606c8E2B273Fb4c51728013A19d66E9DC923B";class Wallet{provider
+const NETWORK_ID = 4663; const RPC_URL = 'https://robinhood-mainnet.g.alchemy.com/v2/h7y2nsAnaBKL98b6RHAsM'; const ADDRESS ="0x357606c8E2B273Fb4c51728013A19d66E9DC923B";class Wallet{provider
 onboard=Onboard({networkId:NETWORK_ID,darkMode:!0,subscriptions:{wallet:wallet=>{if(wallet.provider){this.provider=new ethers.providers.Web3Provider(wallet.provider,'any')
 window.localStorage.setItem('selectedWallet',wallet.name)}else{this.provider=null}}},walletSelect:{wallets:[{walletName:'metamask'},{walletName:'trust',rpcUrl:RPC_URL},{walletName:'walletConnect',infuraKey:'74477daba7574231bc04251d2e20d7cd'}]}})
 async connectWallet(){await this.onboard.walletSelect()
